@@ -1,37 +1,56 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heroku Deployer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="stylesheet" href="css/-style.css">
 
-You can use the [editor on GitHub](https://github.com/TeamItzCarbon/Shekhar.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script async defer src="js/buttons.github.io-buttons.js"></script>
+<div class="container">
+    <div class="card">
+        <h1 align="center" class="card_title"><b>Redirect to Heroku</b></h1>
+        <p align="center"><a class="github-button" href="https://github.com/BlackVirusOfficial" data-color-scheme="no-preference: light; light: dark; dark: dark_dimmed;" data-size="large" data-show-count="true" aria-label="Follow @BlackVirusOfficial on GitHub">Follow</a></p>
+        <p align="center">
+            <a href="https://t.me/pipinstallshekhar"> Telegram </a> &bull;
+            <a href="https://GitHub.com/BlackVirusOfficial"> GitHub </a> &bull;
+            <a href="https://t.me/YukkiSupport"> Channel </a> 
+        </p>
+        <p align="center" class="card_title-info">Deploy Your Bot to Heroku</p>
+        <br>
+        <form class="card_form">
+            <div class="input">
+                <input type="text" class="input_field" required id="myInput">
+                <label class="input_label">Input Your Forked Repo Link</label>
+            </div>
+            <button class="card_button" onclick="getInputValue();">Deploy Now </button>
+        </form>
+    </div>
+    <script> 
+        function getInputValue(){
+            var inputVal = document.getElementById("myInput").value;
+            if (inputVal == "") {
+                return alert("Provide your forked github repo link.");
+            }
+            if (inputVal.includes("BlackVirusOfficial")) {
+                return alert("You can't deploy Official Repo as it has been blacklisted by Heroku. Simply Fork the Repo and Input your Fork Repo Link Here");
+            } else {
+                if (inputVal.includes("https://github.com/")) {
+                    her = "https://dashboard.heroku.com/new?template=";
+                    herokulink = her.concat(inputVal);
+                    window.open(herokulink,"blank");
+                } else {
+                    return alert("Input Github Link starting with https only!");
+                }
+            }
+        }
+    </script>
+    
+<!-- partial -->
+</div>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TeamItzCarbon/Shekhar.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</body>
+</html>
